@@ -51,11 +51,11 @@ if show_button:
     # -----------------------------
     def stok_hesabat(store_code, tarix_format1, tarix_format2):
         query = f"""
-        SELECT * FROM [NewDynCashReportDB].[dbo].[DynCashCekEsasli] ('{tarix_format1}','{tarix_format2}','{store_code}')
+        SELECT * FROM [NewDynCashReportDB].[dbo].[DynCashCekEsasli_MB] ('{tarix_format1}','{tarix_format2}','{store_code}')
         """
         url = "http://81.17.83.210:1999/api/Metin/GetQueryTable"
         headers = {"Content-Type": "application/json", "Accept": "application/json"}
-        html_json = {"Query": query, "Kod": "B!Q"}
+        html_json = {"Query": query, "Kod": st.secrets["Kod"]}
 
         response = requests.get(url, json=html_json, headers=headers, verify=False)
         if response.status_code == 200:
@@ -118,4 +118,5 @@ if show_button:
     # Final message
     status_placeholder.text("🎯 Bütün mağaza məlumatları yükləndi!")
     progress_bar.progress(100)
+
 
