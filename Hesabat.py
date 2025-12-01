@@ -28,10 +28,10 @@ bugun_tarix = date.today()
 tarix_ilk = bugun_tarix.replace(day=1).isoformat()
 tarix_bugun = bugun_tarix.isoformat()
 
-bolge = st.selectbox(
+bolge = st.multiselect(
     "Bölgə seçin",
     options=bolgeler,
-    index=0
+    placeholder=""
 )
 
 b_col, s_col, button_col = st.columns(3, vertical_alignment="bottom")
@@ -124,6 +124,7 @@ if show_button:
         time.sleep(0.7)
 
     progress_bar.progress(100)
+
 
 
 
