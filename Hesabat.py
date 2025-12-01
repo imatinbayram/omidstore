@@ -42,7 +42,7 @@ s_tarix = s_col.date_input("Son tarix", label_visibility="visible", key='tarix2'
                            value = bugun_tarix)
 show_button = button_col.button("Göstər", use_container_width=True)
 
-store_df = store_df[store_df["Bolge"]==bolge]
+store_df = store_df[store_df["Bolge"].isin(bolge)]
 
 if show_button:
     b_tarix_format = b_tarix.isoformat()
@@ -124,6 +124,7 @@ if show_button:
         time.sleep(0.7)
 
     progress_bar.progress(100)
+
 
 
 
