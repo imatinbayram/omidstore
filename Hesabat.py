@@ -57,6 +57,8 @@ if show_button:
     def stok_hesabat(store_code, tarix_format1, tarix_format2):
         query = f"""
         SELECT * FROM [NewDynCashReportDB].[dbo].[DynCashCekEsasli] ('{tarix_format1}','{tarix_format2}','{store_code}')
+        UNION ALL
+        SELECT * FROM [NewDynCashReportDB].[dbo].[MikroCekEsasli] ('{tarix_format1}','{tarix_format2}','{store_code}')
         """
         url = "http://81.17.83.210:1999/api/Metin/GetQueryTable"
         headers = {"Content-Type": "application/json", "Accept": "application/json"}
@@ -122,6 +124,7 @@ if show_button:
         time.sleep(0.7)
 
     progress_bar.progress(100)
+
 
 
 
