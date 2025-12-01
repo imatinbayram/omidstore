@@ -83,7 +83,7 @@ if show_button:
         if not df.empty:
             df["Kod"] = store_code
             # df["Bolge"] = bolge
-            df["Bolge"] = {store_df[store_df['Kod']==int(store_code)]['Bolge'].iloc[0]}
+            df["Bolge"] = store_df[store_df['Kod']==int(store_code)]['Bolge'].iloc[0]
             all_data = pd.concat([all_data, df], ignore_index=True)
         
             stok_cem = (
@@ -125,6 +125,7 @@ if show_button:
         time.sleep(0.7)
 
     progress_bar.progress(100)
+
 
 
 
