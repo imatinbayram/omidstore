@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" alt="OMID HESABAT Logo" width="150"/>
+  <img src="https://github.com/imatinbayram/omid/blob/main/omid%20icon.png" alt="OMID HESABAT Logo" width="150"/>
 </p>
 
 # 📊 OMID HESABAT
